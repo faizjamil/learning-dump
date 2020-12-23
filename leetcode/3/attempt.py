@@ -28,7 +28,8 @@ def lengthOfLongestSubstring(s: str) -> int:
         'w': 0,
         'x': 0,
         'y': 0,
-        'z': 0
+        'z': 0,
+        ' ': 0
     }
     # iterate through each character of s
     # concat each character to a string and return length of string
@@ -36,10 +37,16 @@ def lengthOfLongestSubstring(s: str) -> int:
     # how to account for substrings elsewhere
     # perhaps lookahead to next letter and see if it is not a duplicate
     # if it is not duplicate, then reset count of all letters
-    for char in s:
-        if alphabet_characters[char] < 1:
-            longest_substring = longest_substring + char
-            alphabet_characters[char] = alphabet_characters[char] + 1
+    for index in range(0, len(s)):
+        if s == "":
+            break
+        elif alphabet_characters[s[index]] < 1:
+            longest_substring = longest_substring + s[index]
+            alphabet_characters[s[index]] = alphabet_characters[s[index]] + 1
+        elif s[index - 1].__eq__(s[index]):
+            longest_substring = ""
+            for key, value in alphabet_characters.items():
+                alphabet_characters[key] = 0
         else:
             break
     return len(longest_substring)
