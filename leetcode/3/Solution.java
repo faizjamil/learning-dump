@@ -7,7 +7,9 @@ public class Solution {
         int ans = 0;
         for (int i = 0; i < n; i++)
             for (int j = i + 1; j <= n; j++)
-                if (allUnique(s, i, j)) ans = Math.max(ans, j - i);
+                if (allUnique(s, i, j)){
+                    ans = Math.max(ans, j - i);
+                } 
         return ans;
     }
 
@@ -23,14 +25,14 @@ public class Solution {
     public static void main(String[] args) {
         Solution test = new Solution();
         System.out.println(test.lengthOfLongestSubstring("pwwkew"));
-        System.out.println(test.lengthOfLongestSubstring("ckilbkd"));
-        System.out.println(test.lengthOfLongestSubstring("aab"));
-        System.out.println(test.lengthOfLongestSubstring(" "));
-        System.out.println(test.lengthOfLongestSubstring("au"));
-        System.out.println(test.lengthOfLongestSubstring("dvdf"));
-        System.out.println(test.lengthOfLongestSubstring("anviaj"));
-        System.out.println(test.lengthOfLongestSubstring("asjrgapa"));
-        System.out.println(test.lengthOfLongestSubstring("jbpnbwwd"));
-        System.out.println(test.lengthOfLongestSubstring("ohvhjdml"));
+        // System.out.println(test.lengthOfLongestSubstring("ckilbkd"));
+        // System.out.println(test.lengthOfLongestSubstring("aab"));
+        // System.out.println(test.lengthOfLongestSubstring(" "));
+        // System.out.println(test.lengthOfLongestSubstring("au"));
+        // System.out.println(test.lengthOfLongestSubstring("dvdf"));
+        // System.out.println(test.lengthOfLongestSubstring("anviaj"));
+        // System.out.println(test.lengthOfLongestSubstring("asjrgapa"));
+        // System.out.println(test.lengthOfLongestSubstring("jbpnbwwd"));
+        // System.out.println(test.lengthOfLongestSubstring("ohvhjdml"));
     }
 }
