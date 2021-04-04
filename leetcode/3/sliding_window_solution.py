@@ -12,7 +12,7 @@ def lengthOfLongestSubstring(s: str) -> int:
     # for loop, figure out violating condition
     # violating condition would be if the current letter is already in the running string
     # check letter at window_end
-    # if that is in string, then move window one space over
+    # if that is in string, then move window one space over, removing the character that is no longer in the window
     # else, increase the window size (increase window_end)
     
     while (window_start < length and window_end < length):
@@ -62,4 +62,3 @@ def all_unique(substring: str, start: int, end: int):
 # correct output: 6
 #print(lengthOfLongestSubstring("ohvhjdml"))
 # correct output: some large number
-print(lengthOfLongestSubstring())
