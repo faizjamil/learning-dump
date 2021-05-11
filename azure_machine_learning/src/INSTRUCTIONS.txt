@@ -1,0 +1,14 @@
+CLARA_NN_V3.5
+DO NOT RUN train.py unless there is a GPU available, or training will use a CPU and take forever!
+Trained neural network, with a custom dataset created from our own data.
+Command Line Program. RUN WITHIN VIRTUAL ENVIRONMENT
+
+
+
+Training the model: DO NOT TRAIN WITHOUT GPU.
+python train.py --use_gpu ## will train the model with default hyperparameters. To change parameters, for example, epochs, " python train.py --epochs 10 ".
+
+Using model of inference:
+The trained model can be used for inference on the images in the 'fonts' folder.
+Ex:
+	python predict.py --dir categories/valid/2/27.jpg

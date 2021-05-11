@@ -1,0 +1,398 @@
+Name AzureML-VowpalWabbit-8.8.0
+packages channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-core==1.19.0
+  - azureml-defaults==1.19.0
+  - azureml-dataset-runtime[fuse,pandas]
+name: azureml_769be4b756b756954fa484d1287d5153
+
+Name AzureML-PyTorch-1.3-CPU
+packages channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip=20.2.4
+- pip:
+  - azureml-core==1.21.0.post1
+  - azureml-defaults==1.21.0
+  - azureml-telemetry==1.21.0
+  - azureml-train-restclients-hyperdrive==1.21.0
+  - azureml-train-core==1.21.0
+  - torch==1.3
+  - torchvision==0.4.1
+  - mkl==2018.0.3
+  - horovod==0.18.1
+  - tensorboard==1.14.0
+  - future==0.17.1
+name: azureml_a02f4fa469cd8066bd6e2f219433318d
+
+Name AzureML-Minimal
+packages channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+name: azureml_f12bb28f3ac16aaf0ce451dc2138c5e4
+
+Name AzureML-Tutorial
+packages channels:
+- anaconda
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - azureml-widgets==1.26.0
+  - azureml-pipeline-core==1.26.0
+  - azureml-pipeline-steps==1.26.0
+  - azureml-opendatasets==1.26.0
+  - azureml-automl-core==1.26.0
+  - azureml-automl-runtime==1.26.0
+  - azureml-train-automl-client==1.26.0
+  - azureml-train-automl-runtime==1.26.0
+  - azureml-train-automl==1.26.0
+  - azureml-train==1.26.0
+  - azureml-sdk==1.26.0
+  - azureml-interpret==1.26.0
+  - azureml-tensorboard==1.26.0
+  - azureml-mlflow==1.26.0
+  - mlflow
+  - sklearn-pandas
+- pandas
+- numpy
+- tqdm
+- scikit-learn
+- matplotlib
+name: azureml_f3e17a31e8bb78187505ee1343fa990d
+
+Name AzureML-PyTorch-1.5-GPU
+packages channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip=20.2.4
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - torch==1.5.0
+  - torchvision==0.5.0
+  - mkl==2018.0.3
+  - horovod==0.19.1
+  - tensorboard==1.14.0
+  - future==0.17.1
+name: azureml_882ee364d24ed926343fbf47717e0a12
+
+Name AzureML-TensorFlow-2.2-CPU
+packages channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - tensorflow==2.2.0
+  - horovod==0.19.5
+name: azureml_df4cc82743474613807a8ec093172e46
+
+Name AzureML-PyTorch-1.6-CPU
+packages channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip=20.2.4
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - cmake==3.18.2
+  - torch==1.6.0
+  - torchvision==0.5.0
+  - mkl==2018.0.3
+  - horovod==0.20.0
+  - tensorboard==1.14.0
+  - future==0.17.1
+name: azureml_15a1ed1df60c62eb2ab6b34ff768e80f
+
+Name AzureML-TensorFlow-1.15-Inference-CPU
+packages channels:
+- anaconda
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-defaults==1.26.0
+name: project_environment
+
+Name AzureML-PyTorch-1.5-CPU
+packages channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip=20.2.4
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - torch==1.5.0
+  - torchvision==0.5.0
+  - mkl==2018.0.3
+  - horovod==0.19.1
+  - tensorboard==1.14.0
+  - future==0.17.1
+name: azureml_882ee364d24ed926343fbf47717e0a12
+
+Name AzureML-TensorFlow-2.2-GPU
+packages channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - tensorflow-gpu==2.2.0
+  - horovod==0.19.5
+name: azureml_26be2a0bfcc81b6defa9235c1555b590
+
+Name AzureML-XGBoost-0.9-Inference-CPU
+packages channels:
+- anaconda
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-defaults==1.26.0
+name: project_environment
+
+Name AzureML-PyTorch-1.6-Inference-CPU
+packages channels:
+- anaconda
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-defaults==1.26.0
+name: project_environment
+
+Name AzureML-PyTorch-1.6-GPU
+packages channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip=20.2.4
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - cmake==3.18.2
+  - torch==1.6.0
+  - torchvision==0.5.0
+  - mkl==2018.0.3
+  - horovod==0.20.0
+  - tensorboard==1.14.0
+  - future==0.17.1
+name: azureml_15a1ed1df60c62eb2ab6b34ff768e80f
+
+Name AzureML-TensorFlow-2.3-CPU
+packages channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip=20.2.4
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - tensorflow==2.3.0
+  - cmake==3.18.2
+  - horovod==0.20.0
+name: azureml_8248cfd9a916ebfa6d13501d7b46a28b
+
+Name AzureML-Triton
+packages channels:
+- conda-forge
+dependencies:
+- python=3.7.9
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults[async]
+  - azureml-contrib-services==1.26.0
+  - numpy
+  - inference-schema[numpy-support]
+  - grpcio-tools
+  - geventhttpclient
+  - https://developer.download.nvidia.com/compute/redist/tritonclient/tritonclient-2.7.0-py3-none-manylinux1_x86_64.whl
+name: azureml_cad6cd731a8cca9113ed527e556a9bd5
+
+Name AzureML-TensorFlow-2.3-GPU
+packages channels:
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip=20.2.4
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - tensorflow-gpu==2.3.0
+  - cmake==3.18.2
+  - horovod==0.20.0
+name: azureml_d92809b41ab897ef0ccef8479f68260c
+
+Name AzureML-DeepSpeed-0.3-GPU
+packages channels:
+- pytorch
+- conda-forge
+dependencies:
+- python=3.6.2
+- cudatoolkit-dev=10.1.243
+- cudatoolkit=10.1
+- pytorch==1.6.0
+- torchvision==0.7.0
+- gxx_linux-64
+- pip<=20.2
+- pip:
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - azureml-mlflow==1.26.0
+  - azureml-dataprep
+  - cmake==3.18.2
+  - mkl==2018.0.3
+  - tensorboard==1.14.0
+  - future==0.17.1
+  - matplotlib
+  - boto3
+  - h5py
+  - sklearn
+  - scipy
+  - pillow
+  - tqdm
+  - cupy-cuda101
+  - mpi4py
+  - deepspeed==0.3.11
+name: azureml_4c49bfef55ff56b9daa344941483bf82
+
+Name AzureML-Minimal-Inference-CPU
+packages channels:
+- anaconda
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip:
+  - azureml-defaults==1.26.0
+name: project_environment
+
+Name AzureML-Pytorch1.7-Cuda11-OpenMpi4.1.0-py36
+packages channels:
+- anaconda
+- pytorch
+- conda-forge
+dependencies:
+- python=3.6.9
+- pip>=21.0,<22
+- pytorch==1.7.1
+- torchvision==0.8.2
+- torchaudio==0.7.2
+- cudatoolkit=11.0
+- nvidia-apex==0.1.0
+- pip:
+  - matplotlib>=3.3,<3.4
+  - psutil>=5.8,<5.9
+  - tqdm>=4.59,<4.60
+  - pandas>=1.1,<1.2
+  - theano>=1.0,<1.1
+  - scipy>=1.5,<1.6
+  - numpy>=1.10,<1.20
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-mlflow==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - tensorboard==2.4.0
+  - horovod==0.20.0
+  - onnxruntime-gpu>=1.7,<1.8
+  - future==0.17.1
+name: azureml_a3e3434bd3fec67ad455dfe16747f230
+
+Name AzureML-Scikit-learn0.24-Cuda11-OpenMpi4.1.0-py36
+packages channels:
+- anaconda
+- conda-forge
+dependencies:
+- python=3.6.9
+- pip>=21.0,<22
+- pip:
+  - matplotlib>=3.3,<3.4
+  - psutil>=5.8,<5.9
+  - tqdm>=4.59,<4.60
+  - pandas>=1.1,<1.2
+  - theano>=1.0,<1.1
+  - scipy>=1.5,<1.6
+  - numpy>=1.10,<1.20
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-mlflow==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - scikit-learn==0.24.1
+name: azureml_5fe324eb2cc5d6ab8afd92822e495375
+
+Name AzureML-TensorFlow2.4-Cuda11-OpenMpi4.1.0-py36
+packages channels:
+- anaconda
+- conda-forge
+dependencies:
+- python=3.6.2
+- pip>=21.0,<22
+- pip:
+  - matplotlib>=3.3,<3.4
+  - psutil>=5.8,<5.9
+  - tqdm>=4.59,<4.60
+  - pandas>=1.1,<1.2
+  - theano>=1.0,<1.1
+  - scipy>=1.5,<1.6
+  - numpy>=1.10,<1.20
+  - azureml-core==1.26.0
+  - azureml-defaults==1.26.0
+  - azureml-mlflow==1.26.0
+  - azureml-telemetry==1.26.0
+  - azureml-train-restclients-hyperdrive==1.26.0
+  - azureml-train-core==1.26.0
+  - tensorflow-gpu==2.4.0
+  - tensorboard==2.4.0
+  - horovod==0.20.0
+  - onnxruntime-gpu>=1.7,<1.8
+name: azureml_271cb08c51c462a516ec0a90ed30bd29
+

@@ -1,0 +1,102 @@
+You will be executing these commands in a terminal
+
+
+
+NOTE: all commands to be executed in a terminal are in quotes
+REMOVE THE QUOTES BEFORE EXECUTING EACH COMMAND
+
+
+You will need to run the train.py and predict.py within a virtual environment
+
+
+===========================================================================================================================
+VIRTUAL ENVIRONMENT SETUP
+===========================================================================================================================
+
+On Ubuntu (and any Ubuntu and Debian-based distros) you need to make sure python3-venv and python3-pip are installed
+Use the following commands to install these
+"sudo apt update && sudo apt install python3-pip"
+
+"sudo apt update && sudo apt install python3-venv"
+
+The command to create a virutal environment on Linux is slightly different, it is 
+"python3 -m venv <directory name>"
+
+as is the directory structure, but the steps below should work for linux
+
+On windows the command is
+"python -m venv <directory name>"
+which creates a new directory and the following folders and files
+
+Include\
+Lib\
+Scripts\ (contains activation scripts)
+Share\
+pyenv.cfg
+
+Note that in Linux the "bin" folder is in place of the "Scripts" folder
+There is also two additional folders "lib64" and "share"
+
+I would recommend to not change anything in these files and folders unless you know what you are doing
+
+
+Next grab the folder of whatever version of ANN you are working with and place it in the directory the virtual environemtn is located in ALONGSIDE the venv folders
+such that you should have the following files and folders in <directory name>
+annV<whatever version you are using>\
+Include\
+Lib\
+Scripts\ (contains activation scripts)
+pyenv.cfg
+
+Now navigate to the Scripts directory and enter the "activate" command (without quotes)
+
+You will know you are in the virtual environment when you see the folder name of the venv before your vurrent working directory
+EX:
+
+(s21-group-b) E:\Downloads\01-Library\s21-group-b\Scripts>
+
+Here s21-group-b is the folder I created the venv in
+
+
+===========================================================================================================================
+INSTALLING NEEDED DEPENDENCIES
+===========================================================================================================================
+
+You can either install each dependency inside the venv one by one or execute the following command
+"pip install -r requirements.txt"
+requirements.txt is a file which contains a list of dependencies and their versions that pip reads and installs
+
+For installing pytorch, go to this website
+
+https://pytorch.org/get-started/locally/
+
+Note that we are using pytorch 1.8.1, the latest Stable build
+For the package manager you can use whichever you are comfortible with, we are using pip here while the previous group used conda
+For compute platform select "CUDA 10.2"
+
+You can copy/paste and then execute what is in the "Run this command" into the terminal with your venv activated and you should be good
+
+You can verify you have the correct dependencies install by executing the following command and making sure the output is somewhgat similar to the following
+"pip freeze 
+
+
+cycler==0.10.0
+imutils==0.5.4
+kiwisolver==1.3.1
+matplotlib==3.4.1
+numpy==1.20.2
+opencv-python==4.5.1.48
+Pillow==8.2.0
+pyparsing==2.4.7
+pytesseract==0.1.5
+python-dateutil==2.8.1
+six==1.15.0
+torch==1.8.1+cu102
+torchaudio==0.8.1
+torchvision==0.9.1+cu102
+typing-extensions==3.7.4.3"
+
+==========================================================================================================================
+INSTALLING CUDA
+===========================================================================================================================
+
