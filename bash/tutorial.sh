@@ -139,3 +139,6 @@ mkdir hello
 touch "hello/world.txt"
 echo "Hello World" >> "hello/world.txt"
 echo "Created hello/world.txt"
+
+# No prob, also note that with bash, if you have a read only file system you need to chmod 777 not just chmod +rx
+# For whatever reason +rx isn’t enough lol
