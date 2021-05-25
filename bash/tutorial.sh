@@ -50,6 +50,20 @@ then
 else
     echo "$NUM1 is less than $NUM2"
 fi
+
+# read NUMBER1
+# read NUMBER2
+# read NUMBER3
+
+# if [ "$NUMBER1" -eq "$NUMBER2" ] && [ "$NUMBER2" -eq "$NUMBER3" ]
+# then
+#     echo "EQUILATERAL"
+# elif [ "$NUMBER1" -eq "$NUMBER2" ] || [ "$NUMBER2" -eq "$NUMBER3" ]
+# then
+#     echo "ISOSCELES"
+# else
+#     echo "SCALENE"
+# fi
 ########
 # val1 -eq val2 Returns true if the values are equal
 # val1 -ne val2 Returns true if the values are not equal
