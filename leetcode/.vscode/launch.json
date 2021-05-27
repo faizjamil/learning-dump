@@ -5,13 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "java",
-            "name": "Launch Solution",
-            "request": "launch",
-            "mainClass": "Solution",
-            "projectName": "leetcode_cbe2509"
-        },
-        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
