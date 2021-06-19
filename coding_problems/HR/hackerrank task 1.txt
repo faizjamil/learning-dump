@@ -1,0 +1,19 @@
+given an array of n integers
+return maximum of two numbers whose add up to an equal sum
+example: given a = [51,71,17,42]
+would return 93, the max possible sum in all the sums here
+the sum cannot be unique
+to get this maximum sum there needs to be at least two pairs of digits that add 
+up to maximum sum
+
+naive approach
+for digit in array
+	for next digit in array
+		calculate sum and add it to array
+		
+optimized approach
+maybe recursion?
+base case: array has a length < 2
+general case: you would have a foor loop
+take the first element of the array, get all combinations of sums, insert maximum sum of first elemtn back into array
+increment 
