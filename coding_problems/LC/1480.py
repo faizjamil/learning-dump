@@ -1,3 +1,6 @@
+from typing import List
+
+
 def runningSum(self, nums: List[int]) -> List[int]:
     result = nums
     for i in range(0, len(nums)):
