@@ -29,8 +29,7 @@ from ListNode import ListNode
 #             is_palindrome = False
 #             break
 #     return is_palindrome
-def reverseLinkedList(head: ListNode) -> ListNode:
-    pass
+
 def isPalindrome(head: ListNode) -> bool:
     # we move this fast pointer two elements at a time 
     # fast pointer moves at twice the rate of slow pointer

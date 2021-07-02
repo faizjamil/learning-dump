@@ -1,15 +1,6 @@
 # link: https://leetcode.com/problems/integer-to-roman/
 # the following function is taken from here: https://thispointer.com/python-how-to-find-keys-by-value-in-dictionary/
-def get_first_key_by_value(dict, value):
-    #list_of_keys = list()
-    list_of_items = dict.items()
-    if value == 0:
-        return ""
-    else:
-        for item in list_of_items:
-            if item[1] == value:
-                #list_of_keys.append(item[0])
-                return item[0]
+from utils import get_first_key_by_value
     #return list_of_keys
 # def intToRoman(num: int) -> str:
 #     roman_numerals = {

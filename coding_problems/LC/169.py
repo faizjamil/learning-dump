@@ -1,15 +1,7 @@
 # link: https://leetcode.com/problems/majority-element/
 
 from typing import List
-def get_first_key_by_value(dict, value):
-    list_of_items = dict.items()
-    if value == 0:
-        return ""
-    else:
-        for item in list_of_items:
-            if item[1] == value:
-                return item[0]
-
+from utils import get_first_key_by_value
 def majorityElement(nums: List[int]) -> int:
     # now i could do the naive approach first, or i can do the hashmap approach now
     elements = {}
