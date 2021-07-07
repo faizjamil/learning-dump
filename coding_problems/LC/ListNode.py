@@ -14,7 +14,7 @@ class ListNode:
     def reverseLinkedList(self):
         ll_as_array = []
         while(self.next != None):
-            ll_as_array.append(self.data)
+            ll_as_array.append(self.val)
             self = self.next
         ll_reversed = ListNode(ll_as_array[len(ll_as_array)-1])
         for i in reversed(range(len(ll_as_array)-1)):
