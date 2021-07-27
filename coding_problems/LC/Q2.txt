@@ -1,0 +1,41 @@
+question 2
+
+highest positive gap between two elements
+example: [7,1,2,5]
+at first element, we do nothing since there is no previous element to compare to
+
+second element is less than the first, not greater
+third element is greater than second, difference is one
+fourth element is greater than 2nd element, difference is four'
+fourth element is greater than 3rd element, difference is three
+max difference is four
+
+# naive algorithm is as follows
+# pointer_one = 0
+# pointer_two = 1
+# max_difference = 0
+# time complexity seems to be O(n^2)
+# while (pointer_one is before the 2nd to last element of array):
+#     
+#     if element at pointer two is less than element at pointer one, we continue with loop
+#         pointer_one += 1
+#         pointer_two = pointer_one + 1
+#     elif element at pointer two is greater than element at pointer one
+#         max_difference = max value between max_difference and (element at pointer two) - (element at pointer one)
+#		  if pointer_two is at end of array, increment pointer_one and set pointer_two to pointer_one+1
+# test with px = [2,3,10,2,4,8,1]
+# trace:
+# pointer_one    pointer_two    max_difference
+# 0				 1				0
+# 0				 2				1
+# 0				 3				8
+# 0 			 4				8
+# 0              5              8
+# 0    			 6				8
+# 1				 2				8
+# 1				 3				8
+# 2				 3				8
+# 3				 4				8
+# 4				 5				8
+# 4				 6				8
+# 5				 6				8
