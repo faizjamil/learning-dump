@@ -8,9 +8,23 @@
 # n can only swap positions with the person in front of them
 # n can only switch positions twice
 # if an element has moved more than two indecies, we cannot achieve the input state
-
-# THE CODE BELOW IS INCORRECT
 # solution is explained here: https://www.youtube.com/watch?v=VT-ChOqUsBM
+# we have two cases, bribe and no bribe
+# to check to see if a person has been bribed, we check if that element belongs in that index
+# if q[i] == i + 1
+#   pass, we don't care about this
+# else
+#   if the previous element q[i-1] == i + 1 or in other words, if an element has been swapped one index back
+#       this is the first bribe
+#       add one to ccounter
+#       swap the element at i-1 with the element at i
+#   else if the element two indices back, q[i-2] == i + 1
+#       increase counter by 2
+#       swap q[i] and q[i-1]
+#       swap q[i-1] and q[i-2]
+#   else
+#       print("Too chaotic")
+# THE CODE BELOW IS INCORRECT
 # def minimumBribes(q):
 #     min_number_of_swaps = 0
 #     # need to keep track of how many times each element swaps
