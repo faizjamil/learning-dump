@@ -23,7 +23,9 @@
 #       swap q[i] and q[i-1]
 #       swap q[i-1] and q[i-2]
 #   else
+#       
 #       print("Too chaotic")
+#       return
 # THE CODE BELOW IS INCORRECT
 # def minimumBribes(q):
 #     min_number_of_swaps = 0
