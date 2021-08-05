@@ -11,6 +11,32 @@
 # solution is explained here: https://www.youtube.com/watch?v=VT-ChOqUsBM
 # we have two cases, bribe and no bribe
 # to check to see if a person has been bribed, we check if that element belongs in that index
+def minimumBribes(q):
+    counter = 0
+    for i in range(len(q)-1,0,-1  ):
+        if q[i] != i+1:
+            
+            if q[i-1] == i + 1:
+                counter += 1
+                q[i],q[i-1] = q[i-1],q[i]
+            elif q[i-2] == i+1:
+                counter += 2
+                temp = q[i-1]
+                # swap q[i-1] and q[i-2]                
+                q[i-1] = q[i-2]
+                q[i-2] = temp 
+                
+                # swap q[i] and q[i-1]
+                temp = q[i]
+                q[i] = q[i-1]
+                q[i-1] = temp
+                
+            else:
+                print("Too chaotic")
+                return
+        
+    print(counter)
+# let i + 1 be the element that's supposed to be at q[i]
 # if q[i] == i + 1
 #   pass, we don't care about this
 # else
@@ -62,9 +88,9 @@
 
 # q= [1, 2, 5, 3, 7, 8, 6, 4]
 
-# q = [2, 1, 5, 3, 4]
+q = [2, 1, 5, 3, 4]
 # q = [2, 5, 1, 3, 4]
-# q = [1,2,3,5,4,6,7,8]
+# q = [1,2,3,5,4,6,7,8] #1
 
-q = [4,1,2,3]
-# minimumBribes(q)
+# q = [4,1,2,3]
+minimumBribes(q)
