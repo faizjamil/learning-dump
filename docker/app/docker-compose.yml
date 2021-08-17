@@ -1,20 +1,26 @@
 version: "3.7"
 
 services:
+  # setup the app service
   app:
     image: node:12-alpine
+    # startup command
     command: sh -c "yarn install && yarn run dev"
     ports:
       - 3000:3000
     working_dir: /app
     volumes:
+    # here we are using the current working directory on hte host machine
+    # we are going to copy all files in the current working directory ON THE HOST MACHINE
+    # to the /app directory in the container
       - ./:/app
+    # set environment variables
     environment:
       MYSQL_HOST: mysql
       MYSQL_USER: root
       MYSQL_PASSWORD: secret
       MYSQL_DB: todos
-
+  # setup the mysql service
   mysql:
     image: mysql:5.7
     volumes:
@@ -22,6 +28,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: todos
-
+# top-level volume key
+# we define a volume with a custom name, if value is empty it uses default config
 volumes:
   todo-mysql-data:
