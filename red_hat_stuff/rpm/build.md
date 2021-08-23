@@ -32,7 +32,7 @@ A `SPEC` file allows you to do the following
 
 A good way to learn RPM is using an exiting source code RPM package and rebuild it. As an example we are rebuilding the `tree` package from an existing source code package
 
-Note: DO NOT use this RPM in production as it conflicts with one already in your RHEL software channels
+Note: **DO NOT** use this RPM in production as it conflicts with one already in your RHEL software channels
 For the purposes of this example I am using a Fedora container while the documentation for this is using RHEL. Any distro based on RHEL such as Fedora and CentOS should in theory work with the steps outlined below.
 
 1. Log into your Fedora system as a regular user
@@ -200,3 +200,74 @@ To update the RPM, rebuild it, copy latest version to your `yum` repo and rerun 
 
 ## Checking your RPM package
 
+Once finished building your RPM, use the `rpm` command to verify its content and make sure the signature worked properly
+You can do this on any RHEL system provided you have the package and the public key. First you import the key used to sign the package and verifying its signature
+```sh
+# rpm --import ~/RPM-GPG-KEY-ABC #Import key file
+$ rpm -K ~/rpmbuild/RPMS/x86_64/tree-1.5.3-2.el6.x86_64.rpm #Check signature
+
+~/rpmbuild/RPMS/x86_64/tree-1.5.3-2.el6.x86_64.rpm: sha1 md5 OK 
+```
+Next check the contents of the file, which can be done in many ways.
+The following command uses the `q` (query) `p` (a package instead of the RPM database) and `i` (show information) flags
+
+```sh
+$ rpm -qpi ~/rpmbuild/RPMS/x86_64/tree-1.5.3-2.el6.x86_64.rpm 
+
+Name : tree                     Relocations: (not relocatable) 
+Version : 1.5.3                 Vendor: (none)
+Release : 2.el6                 Build Date: Thu 15 Sep 2011 11:53:37 PM EDT
+Install Date: (not installed)   Build Host: cnegus.linuxtoys.net 
+Group : Applications/File       Source RPM: tree-1.5.3-2.el6.src.rpm 
+Size : 73868                    License: GPLv2+ 
+Signature : (none) 
+URL : http://mama.indstate.edu/users/ice/tree/ 
+Summary : File system tree viewer 
+Description : 
+The tree utility recursively displays the contents of directories in a
+tree-like format. Tree is basically a UNIX port of the DOS tree 
+utility.
+```
+Using the `-l` (lowercase L) flag lists the contents of a package.
+
+```sh
+$ rpm -qpl ~/rpmbuild/RPMS/x86_64/tree-1.5.3-2.el6.x86_64.rpm 
+
+/usr/bin/tree 
+/usr/share/doc/tree-1.5.3 
+/usr/share/doc/tree-1.5.3/LICENSE 
+/usr/share/doc/tree-1.5.3/README 
+/usr/share/man/man1/tree.1.gz 
+```
+
+Refer to the `rpm` man page for all comamnds to use when working with RPM packages.
+
+## Building an RPM from scratch
+
+You need to make your own spec file (placed in the `SPECS` directory) and place all executibles, user doc files, and config files you want included into a tarball. You can modify an existing spec file or start with a new spec file for your package.
+
+To look at an example of what is in a tarball, untar the `tree` tarball in the `tree` source code package.
+```sh
+$ tar xvf ~/rpmbuild/SOURCES/tree-1.5.3.tgz 
+
+tree-1.5.3/CHANGES 
+tree-1.5.3/INSTALL 
+tree-1.5.3/LICENSE 
+tree-1.5.3/Makefile 
+tree-1.5.3/README 
+tree-1.5.3/tree.c 
+tree-1.5.3/strverscmp.c 
+tree-1.5.3/man/tree.1 
+tree-1.5.3/man/tree.1.fr 
+```
+To make your own tarball, put your content in an arbitrary directory (such as `~/abc-1.0`) and use the tar command below to place the tarball in the `SOURCES` directory from before
+
+```sh
+$ tar -cvzf ~/rpmbuild/SOURCES/abc-1.0-1.tar.gz ~/abc-1.0/
+```
+## More informaiton
+
+[How to create RPMs in Fedora](https://docs.fedoraproject.org/en-US/quick-docs/creating-rpm-packages/)
+
+
+[Building and distributing packages using RPM](https://developer.ibm.com/tutorials/l-rpm1/)
