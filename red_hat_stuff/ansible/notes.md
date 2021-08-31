@@ -22,7 +22,7 @@ In this file we can simply add a single host to the group "ansible client", the 
 
 ```
 [ansible_client]
-192.168.1.2 ansible_ssh_user=root ansible_ssh_private_key= ~/.ssh/id_ed25519.pub
+192.168.1.2 ansible_ssh_user=root ansible_ssh_private_key= ~/.ssh/id_ed25519
 ```
 The general syntax for listing multiple hosts per group is something like this
 
@@ -40,7 +40,9 @@ Now for the password, you can specify that using ``ansible_ssh_pass=<your passwo
 To specify a private ssh key file, set the value of the ``ansible_private_key_file`` variable to the path of your private key file.
 
 
-Note that the examples above are written in an INI style, you can use INI, YAML or JSON in the inventory file.
+The examples above are written in an INI style, you can use INI, YAML or JSON in the inventory file.
+
+Note: To prevent the "ssh-key is too open error" assign perms of 600 to your private key, this makes your private key read and writable only to you.
 
 
 
