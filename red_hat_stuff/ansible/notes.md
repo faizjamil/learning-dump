@@ -49,3 +49,18 @@ Note: To prevent the "ssh-key is too open error" assign perms of 600 to your pri
 [More information on how to manage your inventory (hosts file)](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters)
 
 How that we have our managed nodes setup, let's write a playbook.
+
+# Writing a playbook
+
+Playbooks are written in `YAML`.
+To see an example of the syntax for writing a playbook, go to playbooks/sample_playbook.yml
+
+To execute a playbook, use the `ansible-playbook` command like so.
+
+
+```sh
+ansible-playbook sample_playbook.yml --ask-become-pass
+```
+
+We need to pass that --ask-become-pass flag in order to run the tasks in the playbook as the root user (essentially running `sudo <command>`
+[Here's more information about that](https://www.middlewareinventory.com/blog/ansible-sudo-ansible-become-example/)

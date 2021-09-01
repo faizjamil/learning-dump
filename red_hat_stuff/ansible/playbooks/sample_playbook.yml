@@ -1,0 +1,25 @@
+---
+- name: sample book
+# hosts = managed nodes = clients
+  hosts: ansible_client
+
+# I'm not going to assign a user in a playbook for security reasons
+#  remote_user: root
+  become: true
+# the above are all at one level of indentation
+  
+  tasks:
+# the below config is meant to be used on an RHEL distro of some sort, such as Fedora or Oracle Linux
+
+    - name: install httpd
+      yum: 
+          name: httpd
+          state: latest
+    - name: run httpd
+      service:
+          name: httpd
+          state: started
+    - name: create content
+      copy:
+          content: "congrats on installing ansible"
+          dest: /var/www/html/index.html
