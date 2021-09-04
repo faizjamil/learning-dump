@@ -1,9 +1,9 @@
 # What is Ansible?
 
 Ansible is a tool which allows you to automate the following IT tasks
-* Configuration Management
-* Orchestration 
-* Deployment
+* Configuration Management (Consistency of all systems in the infrastructure is maintained)
+* Orchestration (Integration of multiple applications and executing them in a specific order)
+* Deployment (Applications are deployed automatically on a variety of environments)
 
 A Playbook is a blueprint of automation tasks (Complex IT actions executed with limited or no human involvement). Playbooks are written in YAML.
 Playbooks are essentially frameworks, prewritten code developers can use ad-hoc or as a starting template
@@ -13,15 +13,28 @@ WIth Ansible, you can control a variety of systems (or managed nodes, can be tho
 A code is written once for the installation and deployed multiple times, allows for deployment of services consistently.
 
 
-Pull configuration: Nodes check with the server periodically and fetch the configurations from it. Need to install some sort of client on each node.
+Pull configuration: Nodes check with the server periodically and fetch the configurations from it. Need to install some sort of client on each node. (Examples: Chef and Puppet)
 
 Push configuration: Server pushes configuration to the nodes.
 
 Ansible is a push type of configuration management tool. Meaning that on the parent (or server) node is where you write your configurations and push those files to your managed (or client) nodes.
 
+# Architecture
+Local machine: Where you install Ansible
+Node: A system to be controlledd by the local machine
+Module: A collection of config files
+Inventory: A document that groups the nodes under specific labels. The path to your inventory (also called hosts) file is commonly `/etc/ansible/hosts`
+
+
+Local machine is where your module and inventory are stored.
+
+Local machine connects to the nodes via an SSH client.
+
 # How to install general guidelines and procedures
 
 To install ansible for your specific distro, go to the official site for installation instructions.
+
+In general it is recommended by the official Ansible site to install Ansible through `pip3` (Referred to as such on Ubuntu. might be called `pip` if Python 3 is the only version of Python you have installed)
 
 After installing ansible you must add at least one host in the /etc/ansible/hosts file (also known as the Inventory)
 
@@ -60,8 +73,41 @@ How that we have our managed nodes setup, let's write a playbook.
 # Working with playbooks
 
 
-Playbooks are written in `YAML`.
-To see an example of the syntax for writing a playbook, go to playbooks/sample_playbook.yml
+Playbooks are instructions to configure the nodes, written in `YAML`.
+
+Generally, a playbook looks something like this:
+```YAML
+---
+- name: sample book
+# hosts = managed nodes = clients
+  hosts: ansible_client
+
+# I'm not going to assign a user in a playbook for security reasons
+#  remote_user: root
+  become: true
+# the above are all at one level of indentation
+  
+  tasks:
+# the below config is meant to be used on an RHEL distro of some sort, such as Fedora or Oracle Linux
+
+    - name: install httpd
+      yum: 
+          name: httpd
+          state: latest
+    - name: run httpd
+      service:
+          name: httpd
+          state: started
+    - name: create content
+      copy:
+          content: "congrats on installing ansible"
+          dest: /var/www/html/index.html
+
+```
+
+Here, we give this playbook a name and then add tasks, each with its own name, followed by instructions to execute the task.
+
+[List of collections you can use when defining tasks](https://docs.ansible.com/ansible/latest/collections/index.html#list-of-collections)
 
 Before we execute a playbook, we can pass the `--syntax-check` flag to the `ansible-playbook` command like so:
 
@@ -119,5 +165,9 @@ The "Gathering facts" task fetches the state of the client machine to see what n
 The recap section lists the results of executing the playbook, lists the number of errors, changes, tasks that went ok, were ignored, etc.
 
 
+
+
+# Ansible Tower
+A framework for Ansible which uses a GUI created by Red Hat. More approachable to those who don't like the command line.
 
 [Source of most of the info above](https://youtu.be/EcnqJbxBcM0)
