@@ -1,6 +1,5 @@
-# How to install ansible 
-
-This is assuming an Ubuntu installation
+# How to install Ansible
+These first few steps are `apt` specific (Debian-based distros like Ubuntu). Refer to your distro's official documentation for how to install Python 3 and the correct version of `pip` if you are not using `apt`.
 
 ## 1. First, ensure that python3 and pip3 are installed
 ```sh
@@ -25,6 +24,11 @@ To verify that pip3 is installed, check if this works
 pip3 --version
 ```
 ## 2. Install ansible using pip3
+The following steps can be applied to any Linux distro provided you have Python 3 and `pip3` installed.
+
+If you get a `command not found` error when using the below commands exactly, either you don't have Python 3 and `pip3` installed. Or Python 3 is the only version of python you have installed. In any case, replace any occurance of `python3` with `python` and `pip3` with `pip`.
+
+
 ```sh
 $ python3 -m pip3 install --user ansible
 ```

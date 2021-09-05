@@ -32,7 +32,7 @@ Local machine connects to the nodes via an SSH client.
 
 # How to install general guidelines and procedures
 
-To install ansible for your specific distro, go to the official site for installation instructions.
+[Here is a set of instructions](README.md) which should work on Ubuntu or any distro that uses `apt`. However the steps using `pip` can be applied to any distro.
 
 In general it is recommended by the official Ansible site to install Ansible through `pip3` (Referred to as such on Ubuntu. might be called `pip` if Python 3 is the only version of Python you have installed)
 
