@@ -151,3 +151,26 @@ header.propTypes = {
 # Styling
 You can use stylesheets, use Style Components (external package).
 Can use direct CSS in Javascript.
+
+Example:
+```jsx
+<h1 style={{ color: 'red'}}>{title}</h1>
+```
+We change the `h1` in Header.js to the above, colors the element to red
+
+Alternatively you can do something like this
+```jsx 
+<h1 style={headingStyle}>{title}</h1>
+
+const headingStyle = {
+  color: 'red',
+  backgroundColor: 'black'
+}
+```
+
+
+We can use props we pass in to change CSS, refer to [Button.js](./src/components/Button.js)
+
+
+
+State gets passed down, actions get passed up
