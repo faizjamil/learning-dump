@@ -1,11 +1,13 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
-
+import { Col, Card } from 'react-bootstrap'
+import {FaSun} from 'react-icons/fa'
 const WeatherForcast = ({ forcast }) => {
   return (
-    <Card>
+    
+    <Col>
       {forcast.temp}
-    </Card>
+      <FaSun />
+    </Col>
   )
 }
 
