@@ -1,14 +1,50 @@
+import { useState } from 'react'
 import React from 'react'
-import { Col, Card } from 'react-bootstrap'
 import {FaSun} from 'react-icons/fa'
-const WeatherForcast = ({ forcast }) => {
+const WeatherForcast = ({ forcast, textColor }) => {
+  const [isCollapsed, setIsCollapsed] = useState(true)
   return (
     
-    <Col>
-      {forcast.temp}
-      <FaSun />
-    </Col>
+    <p className='card'>
+      
+      
+      <h5 className='card-title'>{forcast.currentTemp}
+      <FaSun style={forcastStyle} alt='Sunny' />
+      
+      </h5>
+      
+        High: {forcast.highTemp}
+      
+      <br/>
+      
+        Low: {forcast.lowTemp}      
+      
+      <br/>
+      
+      <br/>
+      <button style={buttonStyle} className='btn btn-primary mx-auto' type='button' 
+      onClick={() =>setIsCollapsed(!isCollapsed)}>Details</button>
+      <br/>
+      {!isCollapsed &&
+
+        <p>
+          Details go here
+        </p>
+      }
+    </p>
   )
+}
+
+const forcastStyle = {
+  paddingLeft: 5, 
+  paddingBottom: 5,
+  // apply this style only when dark mode is enabled
+  // filter: 'invert(100%)',
+}
+const buttonStyle = {
+  paddingTop: 3,
+  width: '5rem',
+  display: 'block'
 }
 
 export default WeatherForcast

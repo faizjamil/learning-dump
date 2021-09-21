@@ -27,7 +27,11 @@
 .App-link {
   color: #61dafb;
 }
-
+.dark-mode {
+  filter: invert(100%);
+  background-color: black;
+  color: white;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
