@@ -1,19 +1,18 @@
 import { useState } from 'react'
 import React from 'react'
 import {FaSun} from 'react-icons/fa'
-const WeatherForcast = ({ forcast, textColor }) => {
+const WeatherForcast = ({ forcast, darkMode }) => {
   const [isCollapsed, setIsCollapsed] = useState(true)
   return (
     
-    <p className='card'>
+    <div className='container'>
       
       
       <h5 className='card-title'>{forcast.currentTemp}
-      <FaSun style={forcastStyle} alt='Sunny' />
-      
+        <FaSun style={forcastStyle} alt='Sunny' />
       </h5>
-      
-        High: {forcast.highTemp}
+
+      High: {forcast.highTemp}
       
       <br/>
       
@@ -31,7 +30,8 @@ const WeatherForcast = ({ forcast, textColor }) => {
           Details go here
         </p>
       }
-    </p>
+      
+    </div>
   )
 }
 

@@ -1,0 +1,22 @@
+{
+  "forcasts": [
+    {
+      "id": 1,
+      "currentTemp": "70 F",
+      "lowTemp": "66 F",
+      "highTemp": "81 F"
+    },
+    {
+      "id": 2,
+      "currentTemp": "32 F",
+      "lowTemp": "30 F",
+      "highTemp": "36 F"
+    },
+    {
+      "id": 3,
+      "currentTemp": "75 F",
+      "lowTemp": "72 F",
+      "highTemp": "79 F"
+    }
+  ]
+}

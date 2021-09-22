@@ -1,19 +1,19 @@
 import React from 'react'
 import WeatherForcast from './WeatherForcast'
-const WeatherForcasts = ({forcasts}) => {
+const WeatherForcasts = ({forcasts, darkMode}) => {
   return (
-    <div className='container'>
-        {forcasts.map((forcast) => (
-          <div className='row'>
-            <WeatherForcast key={forcast.id} forcast={forcast} />
-          </div>
-        ))}
+    <>
+      {forcasts.map((forcast) => (
+        <div className='row'>
+          <WeatherForcast key={forcast.id} forcast={forcast} />
+        </div>
+      ))}
       
   
     
         
       
-    </div>
+    </>
   )
 }
 
