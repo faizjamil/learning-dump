@@ -12,7 +12,7 @@
 # the below config is meant to be used on an RHEL distro of some sort, such as Fedora or Oracle Linux
 
     - name: install httpd
-      yum: 
+      dnf: 
           name: httpd
           state: latest
     - name: run httpd
