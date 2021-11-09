@@ -5,7 +5,7 @@ const S3_BUCKET = process.env.S3_BUCKET
 import fetch from "node-fetch";
 export const objectParams = { 
     Bucket: S3_BUCKET, 
-    Key: "test.jpg"
+    Key: process.argv[2]
 
 };
 
@@ -14,10 +14,9 @@ export const run = async () => {
     try {
         // create the command
         // const command = new GetObjectCommand(objectParams);
-        const deleteCommand = new DeleteObjectCommand(objectParams);
-        const response = await s3Client.send(deleteCommand)
-        console.log(response)
-        // Create the presigned URL
+        // const response = await s3Client.send(command)
+        // console.log(response)
+        // // Create the presigned URL
         // const signedURL = await getSignedUrl(s3Client, command, {
         //     expiresIn: 3600,
         // });
@@ -33,12 +32,12 @@ export const run = async () => {
         //     Bucket: objectParams.Bucket,
         //     Key: "test.jpg"
         // });
-        // // ContentType: "multipart/form-data"
+        // ContentType: "multipart/form-data"
 
         // const putUrl = await getSignedUrl(s3Client, putCommand, { expiresIn: 3600 });
         // const putResponse = await fetch(putUrl);
         // console.log(
-        //     `\n signed URL: ${await putUrl}\n`
+        //    `\n signed URL: ${await putUrl}\n`
         // );
         // console.log(putResponse)
         //debugger;
@@ -47,4 +46,17 @@ export const run = async () => {
     }
     
 }
-run();
+
+
+export const deleteObject = async () => {
+    try {
+        const deleteCommand = new DeleteObjectCommand(objectParams);
+        const deleteResponse = await s3Client.send(deleteCommand)
+        console.log(deleteResponse)
+
+    } catch (error) {
+        console.log(error)        
+    }
+
+}
+deleteObject();
