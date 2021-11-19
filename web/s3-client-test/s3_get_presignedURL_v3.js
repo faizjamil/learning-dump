@@ -1,4 +1,3 @@
-import { DeleteObjectCommand, GetObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
 import { s3Client } from "./s3_client.js";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 const S3_BUCKET = process.env.S3_BUCKET
@@ -10,53 +9,24 @@ export const objectParams = {
 };
 
 export const run = async () => {
-    // Create a presigned URL
+    // Create a PUT presigned URL
     try {
         // create the command
-        // const command = new GetObjectCommand(objectParams);
-        // const response = await s3Client.send(command)
-        // console.log(response)
-        // // Create the presigned URL
-        // const signedURL = await getSignedUrl(s3Client, command, {
-        //     expiresIn: 3600,
-        // });
-        // console.log(
-        //     `\nGetting "${objectParams.Key}" using signedURL in v3`
-        // )
-        // console.log(signedURL);
-        // const response = await fetch(signedURL);
-        // console.log(
-        //     `\nResponse returned by signed URL: ${await response}\n`
-        // );
-        // const putCommand = new PutObjectCommand({
-        //     Bucket: objectParams.Bucket,
-        //     Key: "test.jpg"
-        // });
-        // ContentType: "multipart/form-data"
+        const putCommand = new PutObjectCommand({
+            Bucket: objectParams.Bucket,
+            Key: "test.jpg"
+        });
 
-        // const putUrl = await getSignedUrl(s3Client, putCommand, { expiresIn: 3600 });
-        // const putResponse = await fetch(putUrl);
-        // console.log(
-        //    `\n signed URL: ${await putUrl}\n`
-        // );
-        // console.log(putResponse)
-        //debugger;
+        const putUrl = await getSignedUrl(s3Client, putCommand, { expiresIn: 3600 });
+        const putResponse = await fetch(putUrl);
+        console.log(
+           `\n signed URL: ${await putUrl}\n`
+        );
+        console.log(putResponse)
     } catch (err) {
         console.log("Error creating presigned URL", err);
     }
     
 }
 
-
-export const deleteObject = async () => {
-    try {
-        const deleteCommand = new DeleteObjectCommand(objectParams);
-        const deleteResponse = await s3Client.send(deleteCommand)
-        console.log(deleteResponse)
-
-    } catch (error) {
-        console.log(error)        
-    }
-
-}
-deleteObject();
+run();
