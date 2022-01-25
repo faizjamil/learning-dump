@@ -1,8 +1,12 @@
 import { getLoginSession } from '../../lib/auth'
 import { findUser } from '../../lib/user'
-
+import {dbConnect} from '../../lib/db_connection_inoperative';
 export default async function user(req, res) {
   try {
+    if (!global.mongoose) {
+      await dbConnect();
+
+    }
     const session = await getLoginSession(req)
     const user = (session && (await findUser(session))) ?? null
 
