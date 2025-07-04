@@ -14,7 +14,7 @@
  *
  * [Express.js docs for more info](https://expressjs.com/en/guide/error-handling.html)
  */
-export default function api_errors(err:any , _req: any, res: any) {
+export default function api_errors(err: any, _req: any, res: any) {
   console.log('Routed to error handler', err);
   res.status(err.statusCode || 500).json({ success: false, error: err });
 }

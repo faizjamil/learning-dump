@@ -14,11 +14,11 @@
  */
 import process from "node:process";
 
-export default function api_headers(req:any, res:any, next:any) {
+export default function api_headers(req: any, res: any, next: any) {
   let origin = [req.headers.origin].find(o => o);
   // console.log('>>> Origin >>>', origin);
   // console.log('>>> RECEIVED HEADERS >>>', req.headers);
-  
+
   if (origin && !/newsday/i.test(origin)) {
     origin = undefined;
   }
@@ -27,7 +27,7 @@ export default function api_headers(req:any, res:any, next:any) {
     origin = `https://${origin}`;
   }
   // deno-lint-ignore no-explicit-any
-  const custom_headers:any = {};
+  const custom_headers: any = {};
 
   if (process.env.ENV === 'local') {
     custom_headers['Cache-Control'] = 'no-cache';

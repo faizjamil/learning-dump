@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/api', api_headers, apiRouter, api_errors);
-app.get('/', (_req:any, res:any) => {
+app.get('/', (_req: any, res: any) => {
   res.send('<h1>Microservice is running</h1>');
 });
 
