@@ -1,10 +1,10 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "dev": "deno run --watch --allow-net --allow-read --allow-env main_server.ts"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
-    "hono": "npm:hono@^4.7.5"
+    "hono": "npm:hono@^4.8.4"
   },
   "lint": {
     "tags": [

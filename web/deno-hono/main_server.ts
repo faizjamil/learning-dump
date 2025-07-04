@@ -1,9 +1,10 @@
-import { Hono } from 'npm:hono'
+import { Hono } from 'npm:hono';
+import api_headers from './lib/api_headers.ts';
+const app = new Hono();
 
-const app = new Hono()
-
+app.use('/', api_headers);
 app.get('/', (c) => {
-  return c.text('Hello Deno!')
-})
+  return c.text('Hello Deno!');
+});
 
-Deno.serve(app.fetch)
+Deno.serve(app.fetch);
