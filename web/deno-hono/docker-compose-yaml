@@ -1,0 +1,25 @@
+## Search and replace 'hono-docker-template' with the name of the service
+
+services:
+  hono-docker-template:
+    container_name: hono-docker-template
+    hostname: hono-docker-template
+    volumes:
+      - .:/usr/app
+    build:
+      context: .
+    environment:
+      - ENV
+      - BUILD_VERSION=local-build # DO NOT SPECIFY WHEN DEPLOYING TO STAGE
+      - NODE_ENV=${ENV} # CAN ONLY BE 'local' OR 'production', hardcode to 'production' WHEN DEPLOYING TO STAGE AND PROD
+      - LOG_LEVEL=info
+      - LOG_PRETTY=on
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "2"
+networks:
+  default:
+    name: special-projects
+    external: true
