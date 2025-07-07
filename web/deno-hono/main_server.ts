@@ -7,4 +7,4 @@ app.get('/', (c) => {
   return c.text('Hello Deno!');
 });
 
-Deno.serve(app.fetch);
+Deno.serve({ port: 3000 }, app.fetch);

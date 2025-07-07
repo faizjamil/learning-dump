@@ -19,12 +19,10 @@ USER deno
 COPY deno.json .
 COPY deno.lock .
 # Install the dependencies
-RUN deno install --frozen --entrypoint main_server.ts
-
+RUN deno install --frozen
 # Copy over application files
 # COPY --chown=node:node . .
 COPY  . .
-
 # Set ARGs and ENV vars
 ARG BUILD_VERSION
 ARG ENV
@@ -32,10 +30,6 @@ ARG ENV
 ENV ENV=${ENV}
 ENV BUILD_VERSION=${BUILD_VERSION}
 ENV NODE_ENV=${ENV}
-# DENO ENV VARS
-ENV DENO_DIR=/deno-dir/
-ENV DENO_INSTALL_ROOT=/usr/local
-ENV PATH=${DENO_INSTALL_ROOT}/bin:${PATH}
 
 # Optional environment variables
 # Set to disable checking if a newer Deno version is available
