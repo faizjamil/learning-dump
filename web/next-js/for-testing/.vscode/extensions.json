@@ -1,3 +1,10 @@
 {
-  "recommendations": ["oxc.oxc-vscode"]
+  "recommendations": [
+    "oxc.oxc-vscode",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode.vscode-typescript-next",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense"
+  ]
 }
