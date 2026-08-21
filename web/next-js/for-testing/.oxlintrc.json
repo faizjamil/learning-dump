@@ -135,7 +135,7 @@
     "typescript/require-await": "error",
     "unicorn/require-number-to-fixed-digits-argument": "error",
     "jsdoc/require-param": "error",
-    "jsdoc/require-param-description": "error", 
+    "jsdoc/require-param-description": "error",
     "jsdoc/require-param-name": "error",
     "jsdoc/require-param-type": "error",
     "jsdoc/require-returns": "error",
@@ -412,7 +412,10 @@
     "import/no-self-import": "error",
     "no-shadow": "error",
     "oxc/no-this-in-exported-function": "error",
-    "import/no-unassigned-import": ["error", { "allow": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.styl"] }],
+    "import/no-unassigned-import": [
+      "error",
+      { "allow": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "**/*.styl"] }
+    ],
     "no-underscore-dangle": "error",
     "no-unexpected-multiline": "error",
     "no-unmodified-loop-condition": "error",
