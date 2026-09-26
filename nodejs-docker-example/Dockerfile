@@ -3,16 +3,18 @@ FROM node:26-trixie-slim
 RUN npm config set update-notifier false
 
 # install global packages in non-root user directory per: https://github.com/nodejs/docker-node/blob/main/docs/BestPractices.md#global-npm-dependencies
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+# ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
 # optionally if you want to run npm global bin without specifying path
 ENV PATH=$PATH:/home/node/.npm-global/bin 
-
+ENV PNPM_HOME="$HOME/.local/share/pnpm"
+ENV PATH="$PNPM_HOME/bin:$PATH"
+ENV SHELL="/bin/bash"
 # install pnpm
 # INSTALLING V11 WORKS
-RUN npm i -g pnpm@11.28.0
+# RUN npm i -g pnpm@11.28.0
 # Using this command results in an error ERR_PNPM_UNKNOWN_SHELL
-# RUN npx --yes get-pnpm
+RUN npx --yes get-pnpm
 # Using the commands below results in a "pnpm: not found" error when executing pnpm fetch below
 # RUN apt-get update && apt-get install -y curl
 # RUN curl -fsSL https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
