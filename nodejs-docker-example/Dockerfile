@@ -1,5 +1,13 @@
 FROM node:26-trixie-slim
 
+RUN npm config set update-notifier false
+
+# install global packages in non-root user directory per: https://github.com/nodejs/docker-node/blob/main/docs/BestPractices.md#global-npm-dependencies
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+
+# optionally if you want to run npm global bin without specifying path
+ENV PATH=$PATH:/home/node/.npm-global/bin 
+
 # install pnpm
 # THIS COMMAND WORKS
 RUN npm i -g pnpm@11.28.0
@@ -25,7 +33,7 @@ COPY --chown=node:node package.json .
 COPY --chown=node:node pnpm-lock.yaml .
 COPY --chown=node:node pnpm-workspace.yaml .
 # silence npm update notifs when using npx
-COPY --chown=node:node .npmrc .
+RUN npm config set update-notifier false
 
 # fetch dependencies to content addressable store
 RUN pnpm fetch

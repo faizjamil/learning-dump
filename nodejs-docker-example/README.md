@@ -6,4 +6,4 @@ This is based off of [the instructions on Docker's official node.js tutorial](ht
 
 As is when building this service you will not get any errors since we are installing pnpm **v11**.
 
-Comments are included in the `Dockerfile` accordingly describing the two official ways to install pnpm without using the suggested pnpm docker image (mainly cause I don't know how to run the code without root using that image).
+Comments are included in the `Dockerfile` accordingly describing the two official ways to install pnpm without using the suggested pnpm docker image (mainly cause I don't know how to run the code as a non-root user using that image).
