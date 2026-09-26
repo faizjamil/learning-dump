@@ -9,9 +9,9 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin 
 
 # install pnpm
-# THIS COMMAND WORKS
+# INSTALLING V11 WORKS
 RUN npm i -g pnpm@11.28.0
-# Using this commands results in an error ERR_PNPM_UNKNOWN_SHELL
+# Using this command results in an error ERR_PNPM_UNKNOWN_SHELL
 # RUN npx --yes get-pnpm
 # Using the commands below results in a "pnpm: not found" error when executing pnpm fetch below
 # RUN apt-get update && apt-get install -y curl
