@@ -15,7 +15,7 @@ RUN npm i -g pnpm@11.28.0
 # RUN npx --yes get-pnpm
 # Using the commands below results in a "pnpm: not found" error when executing pnpm fetch below
 # RUN apt-get update && apt-get install -y curl
-# RUN curl -fsSL https://get.pnpm.io/install.sh | env ENV="$HOME/.shrc" SHELL="$(which sh)" sh -
+# RUN curl -fsSL https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
 
 # Set up directories in advance so we can control the permissions
 RUN mkdir -p /usr/app/node_modules && chown -R node:node /usr/app
