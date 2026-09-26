@@ -1,0 +1,14 @@
+blockExoticSubdeps: true
+# The minimum age of a release in minutes (one week). If a release is younger than this, it will not be considered for installation.
+minimumReleaseAge: 10080
+
+recursiveInstall: false
+trustPolicy: no-downgrade
+updateNotifier: false
+
+# excluding old version of semvar from trust policy
+#
+trustPolicyIgnoreAfter: 10080
+
+allowBuilds:
+  esbuild: set this to true or false

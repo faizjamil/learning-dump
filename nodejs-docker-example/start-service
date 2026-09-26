@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ "$ENV" == "local" ]]; then
+  node --run dev
+else
+  node --run start
+fi

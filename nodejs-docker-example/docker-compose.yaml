@@ -1,0 +1,17 @@
+services:
+  nodejs-docker-example-modified:
+    container_name: nodejs-docker-example-modified
+    hostname: nodejs-docker-example-modified
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+    build:
+      context: .
+    environment:
+      - LOG_LEVEL=info
+      - LOG_PRETTY=on
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "2"
